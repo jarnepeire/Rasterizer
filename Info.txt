@@ -1,0 +1,57 @@
+A quick overview of implementations in the Exam Project:
+----------------------------------------------------------------------------
+General requirements:
+----------------------------------------------------------------------------
+- Week 6-9 Software Rasterizer assignments
+- Week 10-12 DirectX assignments
+- Swappable Software- and DirectX-Rasterizer
+- Swappable texture sampling (DirectX only)
+- Swappable transparancy (DirectX only)
+- Swappable cull modes (both SRAS and DirectX) 
+- Frustum Culling
+- Frame rate indepent camera motion
+- 1 renderer object that manages both rendering techniques
+----------------------------------------------------------------------------
+Extra's: 
+----------------------------------------------------------------------------
+- SceneManager system (makes it possible to swap between scenes in realtime, check key binds)
+- Frame rate independent game loop (capped fps and real FPS outputted to window)
+	-> Frame rate indepent camera motion because of this too
+- Light manager and multiple lights support in DirectX shaders
+- PBR support, used a mesh and textures I made for my "3D For Games 2" exam assignment
+	-> Used Lambert Cook Torrance BRDF for both SRAS and DirectX
+	-> You can swap to "Custom Scene" to see this for yourself
+- Attempt at Clipping (does not interfere with the regular assignments)
+	-> Turned off (only simple frustum culling is being used in SRAS) 
+	-> For now only an attempt is made to clip triangles when going out the left side of the screen
+	-> Has issues where it starts clipping too early when only 1 vertex is out of bounds
+	-> Has issues where it starts clipping when 2 vertices are out of bounds
+
+Clipping code -> Triangle.cpp at line 340
+In the Renderer.cpp you'll find some other check if we're rendering clipped triangles or not -> line 244
+----------------------------------------------------------------------------
+Key Bind Inputs:
+----------------------------------------------------------------------------
+(you can find these printed in the console at the start too, press "I" to re-output it)
+
++--------------------------------------------+
+|     Exam Project - Jarne Peire(2DAE02)     |
++--------------------------------------------+
+|                 Key Binds :                |
++--------------------------------------+-----+
+| Display KeyBind Information          |  I  |
++--------------------------------------+-----+
+| Toggle Rasterizers (SRAS-DX)         |  R  |
++--------------------------------------+-----+
+| Toggle Texture Sampling States       |  F  |
++--------------------------------------+-----+
+| Toggle Transparancy (On/Off)         |  T  |
++--------------------------------------+-----+
+| Toggle CullModes (SRAS and DX)       |  C  |
++--------------------------------------+-----+
+| Toggle Mesh Rotation                 |SPACE|
++--------------------------------------+-----+
+| Previous Scene                       |  F1 |
++--------------------------------------+-----+
+| Next Scene                           |  F2 |
++--------------------------------------+-----+
