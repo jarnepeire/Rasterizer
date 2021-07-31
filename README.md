@@ -22,6 +22,7 @@ As a follow-up, the same Rasterizer was made in the DirectX11 framework and has 
 * BRDF's (Lambert, Phong, Cook-Torrance)
 * Physically Based Rendering (PBR)
 * DirectX Graphics Pipeline
+* Transparency (Partial Coverage)
 * OBJ Parser
 
 Though with all the progress, this Rasterizer can definitely be expanded upon in terms of optimization or extra features such as Multithreading, Indirect Lighting, Reflections, Shadows and Anti-Aliasing to name a few.
